@@ -25,9 +25,7 @@ function non() {
 
       for (var i = 0; i < tableau.length; i++) {
         $("tbody").append("<tr></tr>");
-        $("tr:last").append("<td>" + tableau[i].nom + "</td>");
-        $("tr:last").append("<td>" + tableau[i].age + "</td>");
-        $("tr:last").append("<td>" + tableau[i].metier + "</td>");
+        $("tr:last").append("<td>" + tableau[i].nom + "</td><td>" + tableau[i].age + "</td><td>" + tableau[i].metier + "</td>");
       }
     }
   };
