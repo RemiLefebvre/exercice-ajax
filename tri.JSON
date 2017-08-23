@@ -8,13 +8,13 @@
       },
       {
         "nom":"Marcel",
-        "age":60,
+        "age":30,
         "metier":"marin"
 
       },
       {
         "nom":"Jacques",
-        "age":52,
+        "age":60,
         "metier":"barman"
       }
     ]

@@ -36,7 +36,15 @@ function non(){
     );
     console.log(modeTri);
     console.table(tableau);
+    $("tbody").empty();
 
+    for (var i = 0; i < tableau.length; i++) {
+      $("tbody").append("<tr></tr>")
+      $("tr:last").append("<td>"+tableau[i].nom+"</td>")
+      $("tr:last").append("<td>"+tableau[i].age+"</td>")
+      $("tr:last").append("<td>"+tableau[i].metier+"</td>")
+
+    }
 
 
 
