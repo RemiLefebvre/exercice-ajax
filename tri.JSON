@@ -1,0 +1,21 @@
+{
+    "client":[
+      {
+        "nom":"Bernard",
+        "age":55,
+        "metier":"primeur"
+
+      },
+      {
+        "nom":"Marcel",
+        "age":60,
+        "metier":"marin"
+
+      },
+      {
+        "nom":"Jacques",
+        "age":52,
+        "metier":"barman"
+      }
+    ]
+}

@@ -1,0 +1,15 @@
+table{
+  border: 3px solid #000;
+  margin: 30px;
+}
+
+
+td{
+  border: 1px solid #000;
+  height: 40px;
+  padding: 10px 30px
+}
+thead td{
+  font-weight: bold;
+}
+/*# sourceMappingURL=style.css.map */
