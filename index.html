@@ -32,9 +32,6 @@
 
 <body>
 
-  <input id="leBouton" onclick="non()" type="button" name="" value="Trier par nom">
-
-
   <table>
     <thead>
       <tr>
@@ -44,7 +41,21 @@
       </tr>
     </thead>
     <tbody>
-
+      <tr>
+        <td class="prenom">Bernard</td>
+        <td class="age">55</td>
+        <td class="metier">primeur</td>
+      </tr>
+      <tr>
+        <td class="prenom">Marcel</td>
+        <td class="age">30</td>
+        <td class="metier">marin</td>
+      </tr>
+      <tr>
+        <td class="prenom">Jacques</td>
+        <td class="age">60</td>
+        <td class="metier">barman</td>
+      </tr>
     </tbody>
 
   </table>
@@ -55,9 +66,9 @@
         Trier par :
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a onclick="triNom()" class="dropdown-item" href="#">Prénom</a>
-        <a onclick="triAge()" class="dropdown-item" href="#">Age</a>
-        <a onclick="triMetier()" class="dropdown-item" href="#">Metier</a>
+        <a onclick="tri('nom')" class="dropdown-item" href="#">Prénom</a>
+        <a onclick="tri('age')" class="dropdown-item" href="#">Age</a>
+        <a onclick="tri('metier')" class="dropdown-item" href="#">Metier</a>
       </div>
     </div>
   </div>

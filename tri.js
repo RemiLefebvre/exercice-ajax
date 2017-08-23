@@ -1,82 +1,36 @@
-var modeTri="";
+var modeTri = "";
 
-function triAge(){
-  modeTri="age";
+function tri(x) {
+  modeTri = x;
   non();
 }
 
-function triMetier(){
-  modeTri="metier";
-  non();
-}
-
-function triNom(){
-  modeTri="nom";
-  non();
-}
-
-function non(){
+function non() {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var myObj = JSON.parse(this.responseText);
       var tableau = myObj.client;
 
-
-      tableau.sort(function (a, b) {
-        if (a[modeTri]<b[modeTri]) {
+      tableau.sort(function(a, b) {
+        if (a[modeTri] < b[modeTri]) {
           return -1;
-        }
-        else if (a[modeTri]>b[modeTri]) {
+        } else if (a[modeTri] > b[modeTri]) {
           return 1;
-        }
-        else(a[modeTri]==b[modeTri])
+        } else(a[modeTri] == b[modeTri])
         return 0;
+      });
+      console.table(tableau);
+      $("tbody").empty();
+
+      for (var i = 0; i < tableau.length; i++) {
+        $("tbody").append("<tr></tr>");
+        $("tr:last").append("<td>" + tableau[i].nom + "</td>");
+        $("tr:last").append("<td>" + tableau[i].age + "</td>");
+        $("tr:last").append("<td>" + tableau[i].metier + "</td>");
       }
-    );
-    console.log(modeTri);
-    console.table(tableau);
-    $("tbody").empty();
-
-    for (var i = 0; i < tableau.length; i++) {
-      $("tbody").append("<tr></tr>")
-      $("tr:last").append("<td>"+tableau[i].nom+"</td>")
-      $("tr:last").append("<td>"+tableau[i].age+"</td>")
-      $("tr:last").append("<td>"+tableau[i].metier+"</td>")
-
-    }
-
-
-
-
-
-
-      //
-      // var Bernard = tableau[0];
-      // var Jacques = tableau[1];
-      // var Marcel = tableau[2];
-      //
-      // var prenom = [Bernard.nom,Jacques.nom,Marcel.nom]
-      // var age = [Bernard.age,Jacques.age,Marcel.age]
-      // var metier = [Bernard.metier,Jacques.metier,Marcel.metier]
-      //
-      // if (modeTri=="age") {
-      //   age.sort();
-      // }
-      // if (modeTri=="metier") {
-      //   metier.sort();
-      // }
-      // if (modeTri=="prenom") {
-      //   prenom.sort();
-      // }
-      //
-      // console.log(prenom);
-      // console.log(age);
-      // console.log(metier);
-
     }
   };
   xmlhttp.open("GET", "tri.JSON", true);
   xmlhttp.send();
-
 }
